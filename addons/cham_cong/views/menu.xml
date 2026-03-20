@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_cham_cong_chi_tiet" model="ir.actions.act_window">
+        <field name="name">Dữ liệu Chấm Công</field>
+        <field name="res_model">cham_cong.chi_tiet</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cham_cong_ke_hoach" model="ir.actions.act_window">
+        <field name="name">Lịch Đăng Ký Ca</field>
+        <field name="res_model">cham_cong.ke_hoach</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cham_cong_kieu_ke_hoach" model="ir.actions.act_window">
+        <field name="name">Kiểu Ca Làm Việc</field>
+        <field name="res_model">cham_cong.kieu_ke_hoach</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cham_cong_ngay_le" model="ir.actions.act_window">
+        <field name="name">Danh Mục Ngày Lễ</field>
+        <field name="res_model">cham_cong.ngay_le</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cham_cong_root" name="Chấm Công &amp; Ca Làm" sequence="20"/>
+
+    <menuitem id="menu_cham_cong_van_hanh" name="Vận hành" parent="menu_cham_cong_root" sequence="1"/>
+    <menuitem id="menu_cham_cong_chi_tiet" name="Dữ liệu Chấm công" parent="menu_cham_cong_van_hanh" action="action_cham_cong_chi_tiet" sequence="1"/>
+    <menuitem id="menu_cham_cong_ke_hoach" name="Lịch Đăng Ký Ca" parent="menu_cham_cong_van_hanh" action="action_cham_cong_ke_hoach" sequence="2"/>
+
+    <menuitem id="menu_cham_cong_cau_hinh" name="Cấu hình" parent="menu_cham_cong_root" sequence="10"/>
+    <menuitem id="menu_cham_cong_kieu_ke_hoach" name="Ca Làm Việc" parent="menu_cham_cong_cau_hinh" action="action_cham_cong_kieu_ke_hoach" sequence="1"/>
+    <menuitem id="menu_cham_cong_ngay_le" name="Ngày Lễ" parent="menu_cham_cong_cau_hinh" action="action_cham_cong_ngay_le" sequence="2"/>
+</odoo>

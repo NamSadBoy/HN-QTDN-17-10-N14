@@ -1,10 +1,5 @@
-from odoo import models, fields, api
-
+from odoo import models, fields
 
 class DonVi(models.Model):
-    _name = 'don_vi'
-    _description = 'Bảng chứa thông tin đơn vị'
-    _rec_name = 'ten_don_vi'
-
-    ma_don_vi = fields.Char("Mã đơn vị", required=True)
-    ten_don_vi = fields.Char("Tên đơn vị", required=True)
+    _inherit = 'hr.department'
+    # Module hr mặc định đã đủ dùng, nhưng ta tạo file này để sẵn sàng mở rộng sau này (VD: thêm ngân sách phòng ban).

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_tinh_luong_thuong_phat" model="ir.actions.act_window">
+        <field name="name">Thưởng / Phạt Khác</field>
+        <field name="res_model">tinh_luong.thuong_phat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_tinh_luong_phieu_luong" model="ir.actions.act_window">
+        <field name="name">Bảng Tính Lương</field>
+        <field name="res_model">tinh_luong.phieu_luong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tinh_luong_root" name="Tính Lương" sequence="30"/>
+    
+    <menuitem id="menu_phieu_luong" name="Phiếu Lương" parent="menu_tinh_luong_root" action="action_tinh_luong_phieu_luong" sequence="1"/>
+    <menuitem id="menu_thuong_phat" name="Thưởng Phạt Khác" parent="menu_tinh_luong_root" action="action_tinh_luong_thuong_phat" sequence="2"/>
+</odoo>

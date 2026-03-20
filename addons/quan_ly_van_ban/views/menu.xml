@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <menuitem
-            id="menu_root"
-            name="QLVB"
-            sequence="0"/>
-          
-        <menuitem name="Quản lý văn bản đến" 
-            id="menu_van_ban_den" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_van_ban_den"
-        />
-        <menuitem name="Quản lý văn bản đi" 
-            id="menu_van_ban_di" 
-            parent="menu_root" 
-            sequence="2"
-            action="action_van_ban_di"
-        />
-        <menuitem name="Danh mục loại văn bản" 
-            id="menu_loai_van_ban" 
-            parent="menu_root" 
-            sequence="2"
-            action="action_loai_van_ban"
-        />
-    </data>
+    
+    <record id="view_van_ban_tree" model="ir.ui.view">
+        <field name="name">quan_ly_van_ban.van_ban.tree</field>
+        <field name="model">quan_ly_van_ban.van_ban</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách Văn bản">
+                <field name="name"/>
+                <field name="loai_van_ban"/>
+                <field name="employee_id"/>
+                <field name="ngay_ban_hanh"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_van_ban_form" model="ir.ui.view">
+        <field name="name">quan_ly_van_ban.van_ban.form</field>
+        <field name="model">quan_ly_van_ban.van_ban</field>
+        <field name="arch" type="xml">
+            <form string="Chi tiết Văn bản">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="loai_van_ban"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="ngay_ban_hanh"/>
+                            <field name="ngay_hieu_luc"/>
+                            
+                            <field name="file_name" invisible="1"/>
+                            <field name="tep_dinh_kem" filename="file_name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Trích yếu / Ghi chú">
+                            <field name="ghi_chu"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_quan_ly_van_ban" model="ir.actions.act_window">
+        <field name="name">Hồ sơ Văn bản</field>
+        <field name="res_model">quan_ly_van_ban.van_ban</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_quan_ly_van_ban_root" name="Quản lý Văn bản" sequence="40"/>
+    <menuitem id="menu_van_ban_nhan_su" name="Hồ sơ Văn bản" parent="menu_quan_ly_van_ban_root" action="action_quan_ly_van_ban" sequence="1"/>
+
 </odoo>

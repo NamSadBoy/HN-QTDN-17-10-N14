@@ -1,19 +1,12 @@
-from odoo import models, fields, api
-
+from odoo import models, fields
 
 class LichSuCongTac(models.Model):
-    _name = 'lich_su_cong_tac'
-    _description = 'Bảng chứa thông tin lịch sử công tác'
+    _name = 'nhan_su.lich_su_cong_tac'
+    _description = 'Lịch sử công tác'
 
-    chuc_vu_id = fields.Many2one("chuc_vu", string="Chức vụ")
-    don_vi_id = fields.Many2one("don_vi", string="Đơn vị")
-    loai_chuc_vu = fields.Selection(
-        [
-            ("Chính", "Chính"), 
-            ("Kiêm nhiệm", "Kiêm nhiệm")
-        ], 
-        string="Loại chức vụ", default="Chính"
-    )
-    nhan_vien_id = fields.Many2one("nhan_vien", string="Nhân viên")
-    
-    
+    employee_id = fields.Many2one('hr.employee', string='Nhân viên', ondelete='cascade')
+    tu_ngay = fields.Date(string='Từ ngày', required=True)
+    den_ngay = fields.Date(string='Đến ngày')
+    phong_ban_id = fields.Many2one('hr.department', string='Phòng ban')
+    chuc_vu_id = fields.Many2one('hr.job', string='Chức vụ')
+    ghi_chu = fields.Text(string='Ghi chú')

@@ -1,10 +1,7 @@
-from odoo import models, fields, api
-
+from odoo import models, fields
 
 class ChucVu(models.Model):
-    _name = 'chuc_vu'
-    _description = 'Bảng chứa thông tin chức vụ'
-    _rec_name = 'ten_chuc_vu'
+    _inherit = 'hr.job'
 
-    ma_chuc_vu = fields.Char("Mã chức vụ", required=True)
-    ten_chuc_vu = fields.Char("Tên chức vụ", required=True)
+    he_so_luong = fields.Float(string='Hệ số lương', default=1.0, tracking=True)
+    luong_co_ban_mac_dinh = fields.Float(string='Lương cơ bản (Mặc định)', tracking=True)

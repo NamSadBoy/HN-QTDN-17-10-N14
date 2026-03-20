@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cham_cong_kieu_ke_hoach,cham_cong.kieu_ke_hoach,model_cham_cong_kieu_ke_hoach,base.group_user,1,1,1,1
+access_cham_cong_ke_hoach,cham_cong.ke_hoach,model_cham_cong_ke_hoach,base.group_user,1,1,1,1
+access_cham_cong_ngay_le,cham_cong.ngay_le,model_cham_cong_ngay_le,base.group_user,1,1,1,1
+access_cham_cong_chi_tiet,cham_cong.chi_tiet,model_cham_cong_chi_tiet,base.group_user,1,1,1,1
