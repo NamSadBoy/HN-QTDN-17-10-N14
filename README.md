@@ -41,7 +41,7 @@ Dự án bao gồm 4 module cốt lõi được thiết kế liên kết chặt 
 Mở Terminal và clone kho lưu trữ này về máy:
 ```bash
 git clone [https://github.com/NamSadBoy/HN-QTDN-17-10-N14.git](https://github.com/NamSadBoy/HN-QTDN-17-10-N14.git)
-
+```
 
 Cài đặt các thư viện cần thiết
 Người sử dụng thực thi các lệnh sau đề cài đặt các thư viện cần thiết
